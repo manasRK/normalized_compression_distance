@@ -12,7 +12,6 @@ class NormalizedCompressionDistance(object):
         self.compressor = compressor
     
     def ncd(self, a, b):
-        # http://jon.oberheide.org/ncd/downloads/ncd.py
         compressed_a = self.compressor.compress(a)
         compressed_b = self.compressor.compress(b)
         return (float(len(self.compressor.compress(a + b)) - len(min(compressed_a, compressed_b)))) / float(len(max(compressed_a,
